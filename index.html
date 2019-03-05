@@ -19,46 +19,44 @@
         var achieve = $("#achieve").val()
         var fear = $("#fear").val()
         var inspo = $("#inspiraton").val()
-        var quote = $("#quote")
+        var quote = $("#quote").val()
         var style;
         var fontSelector;
-        
-        if ($('#cozy').prop('checked')) {
-          $('div').css('background-image',"url('Fireplace.png)")
-          //var style = ("'#Fireplace.png'").val()
+
+        if ($("input[name=style]:checked").val() == "cozy") {
+
+          $('div').css('background-image', "url('Fireplace.png')")
+          //var style = ("'#Fireplace.png'").val();
         }
-        else if ($('#sunrise').prop('checked')) {
+        else if ($('input[name=style]:checked').val() == "sunrise") {
+          $('div').css('background-image', "url('SunRise.jpg')")
           //var style = ("'#SunRise.jpg'").val()
         }
-        else if ($('#arial').prop('checked')) {
-          //var fontSelector = ('#arial').val()
-
-        }
-        else{
-          alert("Please choose a font")
-        }
-        if ($('#impact').prop('checked')) {
-          $('p').css('font-family', 'impact')
-          //var fontSelector = ('#impact').val()
-        }
-        else if ($('#nunito').prop('checked')) {
-          //var fontSelector = ('#nunito').val()
-        }
-        else{
+        else {
           alert("Please choose a style")
         }
 
-        //$('div').css('background-image', 'url(style)')
         var words = name + ", if you are reading this, you could probobly use some motivation. " +
           "Fears of " + fear + " should not set you back from your dreams, but encourage you to overcome them to help you " +
-          achieve + " ." + " Someone like " + inspo + " learned by going outside of their comfort zone, trying new solutions, and were determined to be where they are now. " + ". Like a wise person says... " 
-          + quote + ".";
+          achieve + " ." + " Someone like " + inspo + " learned by going outside of their comfort zone, trying new solutions, and were determined to be where they are now. " + " Like a wise person says... " + "'" + quote + "'" + ".";
+        $('p').css('font-family', 'font')
         $('p').html(words)
 
-        
+        if ($("input[name=font]:checked").val() == "arial") {;
+          $('p').css('font-family', 'Arial')
 
+        }
+        else if ($("input[name=font]:checked").val() == "impact") {;
+          $('p').css('font-family', 'Impact')
+
+        }
+        else if ($("input[name=font]:checked").val() == "nunito") {
+          $('p').css('font-family', 'Nunito')
+        }
+        else {
+          alert("Please choose a font")
+        }
       });
-      //});
     });
   </script>
 </head>
@@ -79,7 +77,7 @@
   <input type=radio name=style value=sunrise>Sunrise<br>
   <button>Generate Poster</button>
 
-  <div class=poster div style="width:1000px ; height:720px;  ">
+  <div class=poster div style="width:1280px ; height:720px;  ">
     <p></p>
   </div>
 </body>
