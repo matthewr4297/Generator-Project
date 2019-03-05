@@ -1,0 +1,17 @@
+body{
+    background-color:#00688B;
+    color:orange;
+    text-shadow:2px 2px 10px red
+;
+}
+
+span{
+    font-family:Nunito;
+}
+p{
+    color:yellow;
+}
+/*div{
+    background-image:url(Fireplace.png);
+}*/
+

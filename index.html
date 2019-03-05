@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>jqueryTemplate</title>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Generator Project</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script> //jQuery code goes in the script below
-  
-      $(function(){
-          
+  <script>
+    //jQuery code goes in the script below
+
+    $(function() {
+      //$(document).ready(function() {
+
+
+      $("button").click(function() {
+        var name = $("#name").val()
+        var achieve = $("#achieve").val()
+        var fear = $("#fear").val()
+        var inspo = $("#inspiraton").val()
+        var quote = $("#quote")
+        var style;
+        var fontSelector;
+        
+        if ($('#cozy').prop('checked')) {
+          $('div').css('background-image',"url('Fireplace.png)")
+          //var style = ("'#Fireplace.png'").val()
+        }
+        else if ($('#sunrise').prop('checked')) {
+          //var style = ("'#SunRise.jpg'").val()
+        }
+        else if ($('#arial').prop('checked')) {
+          //var fontSelector = ('#arial').val()
+
+        }
+        else{
+          alert("Please choose a font")
+        }
+        if ($('#impact').prop('checked')) {
+          $('p').css('font-family', 'impact')
+          //var fontSelector = ('#impact').val()
+        }
+        else if ($('#nunito').prop('checked')) {
+          //var fontSelector = ('#nunito').val()
+        }
+        else{
+          alert("Please choose a style")
+        }
+
+        //$('div').css('background-image', 'url(style)')
+        var words = name + ", if you are reading this, you could probobly use some motivation. " +
+          "Fears of " + fear + " should not set you back from your dreams, but encourage you to overcome them to help you " +
+          achieve + " ." + " Someone like " + inspo + " learned by going outside of their comfort zone, trying new solutions, and were determined to be where they are now. " + ". Like a wise person says... " 
+          + quote + ".";
+        $('p').html(words)
+
+        
+
       });
+      //});
+    });
   </script>
-  </head>
-  <body>
-  
-  </body>
+</head>
+
+<body>
+  <h1>Motivational Poster Generator</h1>
+  <span>Please tell me your name: <input id=name><br></span>
+  <span>Tell me something that you want to achieve in life? <input id="achieve"><br></span>
+  <span>What is your greatest fear from success? <input id="fear"><br></span>
+  <span>Tell me someone that you look up to and inspires you<input id="inspiraton"><br></span>
+  <span>Is there a quote that inspires you?<input id ="quote"></span><br>
+  <span>What font would you like your poster to be?<br></span>
+  <input type=radio name=font value=arial>Arial<br>
+  <input type=radio name=font value=impact>Impact<br>
+  <input type=radio name=font value=nunito>Nunito<br>
+  <span>What style do you want your poster to be?<br></span>
+  <input type=radio name=style value=cozy>Cozy<br>
+  <input type=radio name=style value=sunrise>Sunrise<br>
+  <button>Generate Poster</button>
+
+  <div class=poster div style="width:1000px ; height:720px;  ">
+    <p></p>
+  </div>
+</body>
+<style>
+</style>
+
 </html>
